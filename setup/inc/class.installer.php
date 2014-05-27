@@ -59,7 +59,8 @@ class Installer extends SetupWizard {
         $f['dbhost']        = array('type'=>'string',   'required'=>1, 'error'=>'Hostname required');
         $f['dbname']        = array('type'=>'string',   'required'=>1, 'error'=>'Database name required');
         $f['dbuser']        = array('type'=>'string',   'required'=>1, 'error'=>'Username required');
-        $f['dbpass']        = array('type'=>'string',   'required'=>1, 'error'=>'password required');
+        //Make dbpass optional as it should be okay to have an empty password, especially in a dev environment.
+        $f['dbpass']        = array('type'=>'string',   'required'=>0, 'error'=>'Password required');
 
         $vars = array_map('trim', $vars);
 
